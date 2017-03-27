@@ -7,6 +7,19 @@
   </head>
   <body>
     <h1>plain video element</h1>
-    <video src="./its-clark.mp4" width="500" controls></video>
+    <video src="./its-clark.mp4" width="640" controls></video>
+
+    <h1>Clappr</h1>
+    <div id="clappr-player"></div>
+
+    <script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        new Clappr.Player({
+          parentId: '#clappr-player',
+          source: './its-clark.mp4'
+        });
+      });
+    </script>
   </body>
 </html>
