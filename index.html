@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.plyr.io/2.0.12/plyr.css">
   </head>
   <body>
     <h1>plain video element</h1>
@@ -12,13 +13,21 @@
     <h1>Clappr</h1>
     <div id="clappr-player"></div>
 
+    <h1>Plyr</h1>
+    <div class="plyr-player-container" style="width: 640px">
+      <video class="plyr-player" src="./its-clark.mp4" controls></video>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+    <script src="https://cdn.plyr.io/2.0.12/plyr.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         new Clappr.Player({
           parentId: '#clappr-player',
           source: './its-clark.mp4'
         });
+
+        plyr.setup('.plyr-player');
       });
     </script>
   </body>
