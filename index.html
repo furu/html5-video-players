@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.plyr.io/2.0.12/plyr.css">
     <link rel="stylesheet" href="./css/px-video.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/mediaelement/3.2.4/mediaelementplayer.min.css">
   </head>
   <body>
     <h1>plain video element</h1>
@@ -29,10 +30,17 @@
       <div class="px-video-controls"></div>
     </div>
 
+    <h1>MediaElement.js</h1>
+    <p>うまくいかぬ</p>
+    <!--
+    <video class="mejs__player" src="./its-clark.mp4" width="640" controls></video>
+    -->
+
     <script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
     <script src="https://cdn.plyr.io/2.0.12/plyr.js"></script>
     <script src="./js/strings.js"></script>
     <script src="./js/px-video.js"></script>
+    <script src="https://cdn.jsdelivr.net/mediaelement/3.2.4/mediaelement-and-player.min.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         new Clappr.Player({
