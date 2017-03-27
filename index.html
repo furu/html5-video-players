@@ -5,6 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.plyr.io/2.0.12/plyr.css">
+    <link rel="stylesheet" href="./css/px-video.css">
   </head>
   <body>
     <h1>plain video element</h1>
@@ -18,8 +19,20 @@
       <video class="plyr-player" src="./its-clark.mp4" controls></video>
     </div>
 
+    <h1>Accessible HTML5 Video Player</h1>
+    <div class="px-video-container" id="px-video-player">
+      <div class="px-video-img-captions-container">
+        <div class="px-video-captions hide" aria-hidden="true"></div>
+        <video width="640" height="360" controls src="./its-clark.mp4">
+        </video>
+      </div>
+      <div class="px-video-controls"></div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
     <script src="https://cdn.plyr.io/2.0.12/plyr.js"></script>
+    <script src="./js/strings.js"></script>
+    <script src="./js/px-video.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
         new Clappr.Player({
@@ -28,6 +41,11 @@
         });
 
         plyr.setup('.plyr-player');
+
+        new InitPxVideo({
+          videoId: 'px-video-player',
+          debug: true
+        });
       });
     </script>
   </body>
