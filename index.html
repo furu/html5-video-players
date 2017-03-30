@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/6.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.plyr.io/2.0.12/plyr.css">
     <link rel="stylesheet" href="./css/px-video.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/mediaelement/3.2.4/mediaelementplayer.min.css">
@@ -11,22 +12,39 @@
   </head>
   <body>
     <h1>plain video element</h1>
-    <video src="./its-clark.mp4" width="640" controls></video>
+    <ul>
+      <li><a href="http://caniuse.com/#feat=video" target="_blank">Browser support</a></li>
+    </ul>
+    <video src="./its-clark.mp4" poster="./its-clark-poster.png" width="640" controls></video>
 
     <h1>Clappr</h1>
+    <ul>
+      <li><a href="http://clappr.io/" target="_blank">http://clappr.io/</a></li>
+      <li><a href="https://github.com/clappr/clappr" target="_blank">https://github.com/clappr/clappr</a></li>
+    </ul>
     <div id="clappr-player"></div>
 
     <h1>Plyr</h1>
+    <ul>
+      <li><a href="https://plyr.io/" target="_blank">https://plyr.io/</a></li>
+      <li><a href="https://github.com/selz/plyr" target="_blank">https://github.com/selz/plyr</a></li>
+      <li><a href="http://caniuse.com/#feat=video" target="_blank">Browser support</a></li>
+    </ul>
     <div class="plyr-player-container" style="width: 640px">
-      <video class="plyr-player" src="./its-clark.mp4" controls></video>
+      <video class="plyr-player" src="./its-clark.mp4" poster="./its-clark-poster.png" controls width="640"></video>
     </div>
 
     <h1>Accessible HTML5 Video Player</h1>
+    <ul>
+      <li>
+        <a href="https://github.com/paypal/accessible-html5-video-player" target="_blank">https://github.com/paypal/accessible-html5-video-player</a>
+      </li>
+      <li><a href="https://github.com/paypal/accessible-html5-video-player#browser-support" target="_blank">Browser support</a></li>
+    </ul>
     <div class="px-video-container" id="px-video-player">
       <div class="px-video-img-captions-container">
         <div class="px-video-captions hide" aria-hidden="true"></div>
-        <video width="640" height="360" controls src="./its-clark.mp4">
-        </video>
+        <video width="640" height="360" controls src="./its-clark.mp4" poster="./its-clark-poster.png"></video>
       </div>
       <div class="px-video-controls"></div>
     </div>
@@ -38,10 +56,18 @@
     -->
 
     <h1>Video.js</h1>
-    <video class="video-js" src="./its-clark.mp4" width="640" controls data-setup='{}'></video>
+    <ul>
+      <li><a href="http://videojs.com/" target="_blank">http://videojs.com/</a></li>
+      <li><a href="https://github.com/videojs/video.js" target="_blank">https://github.com/videojs/video.js</a></li>
+    </ul>
+    <video class="video-js" src="./its-clark.mp4" poster="./its-clark-poster.png" width="640" controls data-setup='{}'></video>
 
     <h1>afterglow</h1>
-    <video class="afterglow" src="./its-clark.mp4" width="640" controls></video>
+    <ul>
+      <li><a href="https://afterglowplayer.com/" target="_blank">https://afterglowplayer.com/</a></li>
+      <li><a href="https://github.com/moay/afterglow" target="_blank">https://github.com/moay/afterglow</a></li>
+    </ul>
+    <video class="afterglow" src="./its-clark.mp4" poster="./its-clark-poster.png" width="640" controls></video>
 
     <script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
     <script src="https://cdn.plyr.io/2.0.12/plyr.js"></script>
@@ -54,7 +80,8 @@
       document.addEventListener('DOMContentLoaded', function() {
         new Clappr.Player({
           parentId: '#clappr-player',
-          source: './its-clark.mp4'
+          source: './its-clark.mp4',
+          poster: './its-clark-poster.png'
         });
 
         plyr.setup('.plyr-player');
